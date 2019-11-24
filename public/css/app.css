@@ -1,7 +1,19 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 .bg-purple.bg-darken-2 {
-  background-color: #7B1FA2 !important;
+  background-color: #404E67 !important;
+}
+
+.bg-purple.bg-lighten-4 {
+  background-color: #90CAF9 !important;
+}
+
+.card-title {
+  color: #404E67;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
 }
 
 /*!
