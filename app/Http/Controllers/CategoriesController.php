@@ -38,8 +38,16 @@ class CategoriesController extends Controller
     {
         //
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required|unique:categories'
         ]);
+
+        Category::create([
+            'name' => $request->name
+        ]);
+
+        session()->flash('success', 'Category created successfully!');
+
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -84,6 +92,7 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        Category::destroy($category);
+        return redirect(route('categories.index'));
     }
 }

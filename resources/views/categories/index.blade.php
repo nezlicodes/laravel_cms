@@ -11,6 +11,18 @@
                 <h5 class="card-title">Categories</h5>
             </div>
         </div>
+        <div class="card-body">
+            <ul class="list-group">
+                @foreach($categories as $category)
+                <li class="list-group-item"> {{ $category->name }}
+                    <div class="d-flex justify-content-end align-content-center">
+                        <a href="{{ route('categories.destroy', $category->id) }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </li>
+
+                @endforeach
+            </ul>
+        </div>
     </div>
 </div>
 @endsection

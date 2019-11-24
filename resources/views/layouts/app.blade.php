@@ -73,6 +73,11 @@
         </nav>
 
         <main class="py-4 pl-2">
+            @if(session()->has('success'))
+            <div class="alert alert-success">
+                {{session()->get('success')}}
+            </div>
+            @endif
             <div class="row">
                 <div class="col-md-3">
                     <ul class="list-group">
