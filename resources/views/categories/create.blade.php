@@ -8,12 +8,20 @@
             </h5>
         </div>
         <div class="card-body">
-            <form method="post">
+            @if($errors->any())
+            @foreach($errors-> all() as $error)
+            <div class="bkg-danger p-2">
+                <h6 class="text-align-center text-light">{{ $error }}</h6>
+            </div>
+            @endforeach
+            @endif
+            <form action="{{ route('categories.store') }}" method="POST">
+                @csrf
                 <div class="form-group">
                     <label for="name" class="label">Category name:</label>
                     <input type="text" name="name" placeholder="category name" class="form-control">
                 </div>
-                <a href="{{ route('categories.store') }}" type="submit" class="btn btn-success float-right">Add category</a>
+                <button type="submit" class="btn btn-success float-right">Add category</button>
             </form>
         </div>
     </div>
