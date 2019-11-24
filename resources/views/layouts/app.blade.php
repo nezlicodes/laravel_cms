@@ -77,9 +77,10 @@
                 <div class="col-md-3">
                     <ul class="list-group">
                         <li class="list-group-item"> <a href="/posts"> Posts</a></li>
+                        <li class="list-group-item"> <a href="/categories"> Categories</a></li>
                     </ul>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-8">
                     @yield('content')
                 </div>
             </div>
