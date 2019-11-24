@@ -76,8 +76,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <ul class="list-group">
-                        <li class="list-group-item"> <a href="/posts"> Posts</a></li>
-                        <li class="list-group-item"> <a href="/categories"> Categories</a></li>
+                        <li class="list-group-item"> <a href="{{ route('posts.index') }}"> Posts</a></li>
+                        <li class="list-group-item"> <a href="{{ route('categories.index') }}"> Categories</a></li>
                     </ul>
                 </div>
                 <div class="col-md-8">
