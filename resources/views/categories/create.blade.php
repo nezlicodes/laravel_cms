@@ -15,13 +15,18 @@
             </div>
             @endforeach
             @endif
-            <form action="{{ route('categories.store') }}" method="POST">
+            <form action="{{ isset($category) ? route('categories.update', $category->id): route('categories.store') }}" method="POST">
                 @csrf
+                @if(isset($category))
+                @method('PUT')
+                @endif
                 <div class="form-group">
                     <label for="name" class="label">Category name:</label>
-                    <input type="text" name="name" placeholder="category name" class="form-control">
+                    <input type="text" name="name" placeholder="category name" value="{{ isset($category) ? $category->name: '' }}" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success float-right">Add category</button>
+                <button type="submit" class="btn btn-success float-right">
+                    {{asset($category) ? 'Update category' : 'Add category'}}
+                </button>
             </form>
         </div>
     </div>
