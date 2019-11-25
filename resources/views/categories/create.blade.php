@@ -4,7 +4,7 @@
     <div class="card">
         <div class="card-header" style="background:white">
             <h5 class="card-title">
-                Add Category:
+                {{ isset($category) ? 'Edit Category' :  'Add Category'}}
             </h5>
         </div>
         <div class="card-body">

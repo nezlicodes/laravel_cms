@@ -16,10 +16,9 @@
                 @foreach($categories as $category)
                 <li class="list-group-item"> {{ $category->name }}
                     <div class="d-flex justify-content-end align-content-center">
-                        <a href="{{ route('categories.destroy', $category->id) }}" class="btn btn-danger">Delete</a>
+                        <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary">edit</a>
                     </div>
                 </li>
-
                 @endforeach
             </ul>
         </div>
