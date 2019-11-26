@@ -25,7 +25,7 @@
                     <input type="text" name="name" placeholder="category name" value="{{ isset($category) ? $category->name: '' }}" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-success float-right">
-                    {{asset($category) ? 'Update category' : 'Add category'}}
+                    {{isset($category) ? 'Update category' : 'Add category'}}
                 </button>
             </form>
         </div>

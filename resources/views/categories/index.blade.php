@@ -7,9 +7,7 @@
     </div>
     <div class="card">
         <div class="card-header" style="background:white">
-            <div class="row">
-                <h5 class="card-title">Categories</h5>
-            </div>
+            <h5 class="card-title">Categories</h5>
         </div>
         <div class="card-body">
             <ul class="list-group">
