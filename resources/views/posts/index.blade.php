@@ -11,19 +11,21 @@
         <div class="card-body">
             <div class="d-flex flex-wrap justify-content-center align-content-center my-4">
                 @foreach($posts as $post)
-                <div class="card my-1 mr-3" style="max-width: 18rem;">
+                <div class="card my-1 mr-3" style="width: 18rem; height:20rem">
                     <div class="card-header" style="background:white">
                         <h5 class="card-title">{{ $post->title }}</h5>
                     </div>
-                    <div class="body p-2">
+                    <div class="card-text p-2">
                         <p>
                             {{$post->content}}
                         </p>
+                        <button class="btn button-success">Edit</button>
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
+
     </div>
 </div>
 @endsection
