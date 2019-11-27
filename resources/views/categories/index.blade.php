@@ -15,9 +15,13 @@
                 <li class="list-group-item"> {{ $category->name }}
                     <div class="d-flex justify-content-end align-content-center">
                         <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-primary mr-1 btn-small">edit</a>
-                        <button type="button" class="btn btn-danger btn-small" data-toggle="modal" data-target="#exampleModal">
-                            Delete
-                        </button>
+                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn btn-danger btn-small">
+                                Delete
+                            </button>
+                        </form>
                     </div>
                 </li>
                 @endforeach
@@ -26,24 +30,3 @@
     </div>
 </div>
 @endsection
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>

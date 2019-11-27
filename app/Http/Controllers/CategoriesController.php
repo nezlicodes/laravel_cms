@@ -93,7 +93,8 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
-        Category::destroy($category);
+        $category->delete();
+        @session('success', 'Category Deleted');
         return redirect(route('categories.index'));
     }
 }
