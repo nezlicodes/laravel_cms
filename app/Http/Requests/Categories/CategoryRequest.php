@@ -25,9 +25,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name' => 'required|unique:categories',
-            'content' => 'required',
-            'description' => 'required',
-            'image' => 'requried'
+
         ];
     }
 }
