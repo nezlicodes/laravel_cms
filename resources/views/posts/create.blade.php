@@ -29,7 +29,7 @@
                     <textarea type="text" name="content" placeholder="content" id="content" class="form-control"> </textarea>
                 </div>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="image">
+                    <input type="file" class="custom-file-input" name="image" id="image">
                     <label class="custom-file-label" for="image">Choose file...</label>
                 </div>
                 <div class="form-group">

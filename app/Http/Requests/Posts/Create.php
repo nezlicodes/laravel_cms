@@ -27,7 +27,7 @@ class Create extends FormRequest
             'title' => 'required',
             'content' => 'required',
             'description' => 'required',
-            'image' => 'requried'
+            'image' => 'required'
         ];
     }
 }
