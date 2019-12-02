@@ -80,7 +80,13 @@ class PostsController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->content = $request->content;
+        $post->image = $request->image;
+        $post->save();
+        @session('success', 'Post Updated');
+        return redirect(route('posts.index'));
     }
 
     /**

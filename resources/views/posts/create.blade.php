@@ -33,7 +33,7 @@
                 </div>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="image" id="image">
-                    <label class="custom-file-label" for="image">Choose file...</label>
+                    <label class="custom-file-label" for="image" value="{{ isset($post) ? $post->image : '' }}">Choose file...</label>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Submit</button>
