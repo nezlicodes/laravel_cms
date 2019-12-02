@@ -19,7 +19,7 @@
                         <p>
                             {{$post->content}}
                         </p>
-                        <button class="btn button-success">Edit</button>
+                        <a href="{{ route('posts.edit', $post->id) }}" class="btn button-success">Edit</a>
                     </div>
                 </div>
                 @endforeach

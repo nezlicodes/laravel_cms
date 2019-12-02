@@ -3,7 +3,7 @@
 <div class="content">
     <div class="card">
         <div class="card-header">
-            <h5 class="card-title">Create a new post!</h5>
+            <h5 class="card-title">{{ isset($post) ? 'Edit post' : 'Create a new post!'}}</h5>
         </div>
         <div class="card-body">
             @if($errors->any())
@@ -14,19 +14,22 @@
             @endforeach
             @endif
 
-            <form action="{{route('posts.store')}}" method="POST">
+            <form action="{{isset($post) ? route('posts.update', $post->id) : route('posts.store')}}" method="POST">
                 @csrf
+                @if( isset($post))
+                @method('PUT')
+                @endif
                 <div class="form-group">
                     <label for="title" class="label">Title:</label>
-                    <input type="text" name="title" placeholder="title" id="title" class="form-control">
+                    <input type="text" name="title" value="{{ isset($post) ? $post->title: '' }}" placeholder="title" id="title" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="dewscription" class="label">Description:</label>
-                    <input type="text" name="description" placeholder="description" id="description" class="form-control">
+                    <input type="text" name="description" placeholder="description" value=" {{ isset($post) ? $post->description: '' }}" id="description" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="content" class="label">Content:</label>
-                    <textarea type="text" name="content" placeholder="content" id="content" class="form-control"> </textarea>
+                    <textarea type="text" name="content" placeholder="content" id="content" class="form-control">{{ isset($post) ? $post->content: '' }} </textarea>
                 </div>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" name="image" id="image">
